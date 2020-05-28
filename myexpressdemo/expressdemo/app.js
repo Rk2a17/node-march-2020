@@ -9,9 +9,11 @@ app.use (morgan('combined'));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:false})); //QS
 app.use(bodyParser.json());
+app.set('view engine','ejs');
 
 app.use('/',userRoutes);
 app.use('/course',coursesRoutes);
+app.use(require('./middlewares/error'));
 
 const debug = require('debug')('app');
 const server = app.listen(process.env.PORT || 1234,()=>{
