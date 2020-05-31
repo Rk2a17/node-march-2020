@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="logout">
+        <button class="btn btn-danger">Logout</button>
+    </form>
+    <%-include('partials/header') %>
+    User phone no. are
+    <%
+        phone.forEach(p=>{
+            %>
+            <p><%=p%></p>
+            <%
+        });
+    %>
+    <h1>Welcome <%=uid%></h1>
+    <%-include('partials/footer') %>
+</body>
+</html>
